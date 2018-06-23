@@ -3,16 +3,29 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			news: {}
+		};
+	}
+	
+	componentDidMount() {
+		fetch('https://microservice-template-pwkuzxwing.now.sh/')
+			.then(response => response.json())
+			.then(data => {
+					this.setState(() => {
+						return {
+							news: data.news
+						};
+					});
+			});
+	}
+	
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+				{JSON.stringify(this.state.news)}
       </div>
     );
   }
