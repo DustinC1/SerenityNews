@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import PropTypes from 'prop-types';
+
+const propTypes = {
+	title: PropTypes.string,
+	url: PropTypes.string,
+	urlToImage: PropTypes.string
+};
 
 class App extends Component {
 	constructor(props) {
@@ -16,7 +23,7 @@ class App extends Component {
 			.then(data => {
 					this.setState(() => {
 						return {
-							news: data.news
+							news: data
 						};
 					});
 			});
@@ -24,11 +31,14 @@ class App extends Component {
 	
   render() {
     return (
-      <div className="App">
+       <div className="App">
+				<h2>Serenity News</h2>
 				{JSON.stringify(this.state.news)}
-      </div>
+      </div> 
     );
   }
 }
+
+App.propTypes = propTypes;
 
 export default App;
