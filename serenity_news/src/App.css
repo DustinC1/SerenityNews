@@ -1,28 +1,43 @@
 .App {
   text-align: center;
+	background-color: #e6fff2;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.Title-text {
+	font-family: "Times New Roman", cursive, serif;
+	font-style: italic;
+	font-size: 36px;
+	margin: 0;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.Article-img {
+	width: 247px;
+	margin: 6px;
 }
 
-.App-title {
-  font-size: 1.5em;
+.Article-title {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
 }
 
-.App-intro {
-  font-size: large;
+.Article-desc {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.Input-desc {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+}
+
+.grid-card {
+  display: grid;
+  grid-template-columns: 250px auto;
+	text-align: left;
+}
+
+.grid-card-right {
+	position: relative;
+	margin: 9px;
 }
